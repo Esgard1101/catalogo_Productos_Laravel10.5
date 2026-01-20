@@ -12,6 +12,9 @@ class CategoriaController extends Controller
      */
     public function index()
     {
+        //ANTES: Categoria::all()
+        //DESPUÉS: Categoria::orderBy('nombre')->paginate(10)
+
         $categorias = Categoria::orderBy('nombre')->paginate(10);
         return view('categorias.index', compact('categorias'));
     }
@@ -27,7 +30,7 @@ class CategoriaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\App\Http\Requests\StoreCategoriaRequest $request)
+    public function store(StoreCategoriaRequest $request)
     {
         Categoria::create($request->validated());
 
@@ -46,7 +49,7 @@ class CategoriaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(\App\Http\Requests\UpdateCategoriaRequest $request, Categoria $categoria)
+    public function update(UpdateCategoriaRequest $request, Categoria $categoria)
     {
         $categoria->update($request->validated());
 

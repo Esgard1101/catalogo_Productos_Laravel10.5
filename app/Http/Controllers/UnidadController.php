@@ -27,7 +27,7 @@ class UnidadController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\App\Http\Requests\StoreUnidadRequest $request)
+    public function store(StoreUnidadRequest $request)
     {
         Unidad::create($request->validated());
 
@@ -46,7 +46,7 @@ class UnidadController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(\App\Http\Requests\UpdateUnidadRequest $request, Unidad $unidad)
+    public function update(UpdateUnidadRequest $request, Unidad $unidad)
     {
         $unidad->update($request->validated());
 

@@ -27,7 +27,7 @@ class MarcaController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(\App\Http\Requests\StoreMarcaRequest $request)
+    public function store(StoreMarcaRequest $request)
     {
         Marca::create($request->validated());
 
@@ -46,7 +46,7 @@ class MarcaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(\App\Http\Requests\UpdateMarcaRequest $request, Marca $marca)
+    public function update(UpdateMarcaRequest $request, Marca $marca)
     {
         $marca->update($request->validated());
 

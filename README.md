@@ -23,4 +23,4 @@ php artisan key:generate
 php artisan migrate
 php artisan serve
 
->>>>>>> 48ae937b0a67b6c117591a87a47dba95d5e0a76a
+
